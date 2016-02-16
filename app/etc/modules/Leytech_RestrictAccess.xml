@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Leytech_RestrictAccess>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Leytech_RestrictAccess>
+    </modules>
+</config>

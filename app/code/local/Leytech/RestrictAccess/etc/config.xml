@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Leytech_RestrictAccess>
+            <version>1.0.0</version>
+        </Leytech_RestrictAccess>
+    </modules>
+    <global>
+        <models>
+            <restrictaccess>
+                <class>Leytech_RestrictAccess_Model</class>
+            </restrictaccess>
+        </models>
+        <events>
+            <controller_front_init_before>
+                <observers>
+                    <leytech_restrictaccess_access_observer>
+                        <type>singleton</type>
+                        <class>Leytech_RestrictAccess_Model_Observer</class>
+                        <method>checkAccess</method>
+                    </leytech_restrictaccess_access_observer>
+                </observers>
+            </controller_front_init_before>
+        </events>
+    </global>
+</config>
+
