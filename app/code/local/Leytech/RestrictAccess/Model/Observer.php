@@ -25,7 +25,9 @@ class Leytech_RestrictAccess_Model_Observer
 
       if (!$admin_logged_in)
       {
-         die('No access!');
+         header('HTTP/1.0 403 Forbidden');
+         echo 'Access denied.';
+         die();
       }
    }
 
