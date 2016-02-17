@@ -3,6 +3,11 @@ class Leytech_RestrictAccess_Model_Observer
 {
    public function checkAccess()
    {
+      // Do nothing if module is not active
+      if (!$this->_moduleActive()) {
+          return false;
+      }
+
       $adminurl = (string)Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName');
 
       $urlstring = Mage::helper('core/url')->getCurrentUrl();
@@ -23,4 +28,22 @@ class Leytech_RestrictAccess_Model_Observer
          die('No access!');
       }
    }
+
+   /**
+     * Return the config value for the passed path and key
+     */
+    private function _getConfig($path, $key)
+    {
+        $fullpath = 'restrictaccess/' . $path . '/' . $key;
+        return Mage::getStoreConfig($fullpath, Mage::app()->getStore());
+    }
+
+    /**
+     * Return whether the extension has been enabled in the system configuration
+     */
+    private function _moduleActive()
+    {
+        return (bool)$this->_getConfig('settings', 'enable_ext');
+    }
+
 }
