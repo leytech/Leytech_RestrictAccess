@@ -11,6 +11,11 @@
                 <class>Leytech_RestrictAccess_Model</class>
             </restrictaccess>
         </models>
+        <helpers>
+            <restrictaccess>
+                <class>Leytech_RestrictAccess_Helper</class>
+            </restrictaccess>
+        </helpers>
         <events>
             <controller_front_init_before>
                 <observers>
@@ -23,5 +28,11 @@
             </controller_front_init_before>
         </events>
     </global>
+    <default>
+        <restrictaccess>
+            <settings>
+                <enable_ext>0</enable_ext>
+            </settings>
+        </restrictaccess>
+    </default>
 </config>
-

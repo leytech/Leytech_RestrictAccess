@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <restrictaccess translate="title" module="restrictaccess">
+                                        <title>Leytech Restrict Access</title>
+                                        <sort_order>1008650</sort_order>
+                                    </restrictaccess>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl> 
+</config>
