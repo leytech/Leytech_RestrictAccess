@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config>
 	<sections>
-		<restrictaccess translate="label" module="ltapi">
+		<restrictaccess translate="label" module="restrictaccess">
 			<label>Leytech Restrict Access</label>
 			<tab>leytech</tab>
 			<frontend_type>text</frontend_type>
