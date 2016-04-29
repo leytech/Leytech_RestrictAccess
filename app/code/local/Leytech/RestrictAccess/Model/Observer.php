@@ -1,42 +1,47 @@
 <?php
 class Leytech_RestrictAccess_Model_Observer
 {
-   public function checkAccess()
-   {
-      // Do nothing if module is not active
-      if (!$this->_moduleActive()) {
-          return false;
-      }
+    public function checkAccess()
+    {
+        // Do nothing if module is not active
+        if (!$this->_moduleActive()) {
+            return false;
+        }
 
-      $adminurl = (string)Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName');
+        // Do nothing if current IP address is allowed
+        if ($this->_isIpAllowed()) {
+            return false;
+        }
 
-      $urlstring = Mage::helper('core/url')->getCurrentUrl();
-      $url = Mage::getSingleton('core/url')->parseUrl($urlstring);
+        $adminurl = (string)Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName');
 
-      if (strstr($url->path, "/{$adminurl}"))   return $this; // this is the admin section
+        $urlstring = Mage::helper('core/url')->getCurrentUrl();
+        $url = Mage::getSingleton('core/url')->parseUrl($urlstring);
 
-      // get admin session
-      Mage::getSingleton('core/session', array('name' => 'adminhtml'))->start();
+        if (strstr($url->path, "/{$adminurl}"))   return $this; // this is the admin section
 
-      $admin_logged_in = Mage::getSingleton('admin/session', array('name' => 'adminhtml'))->isLoggedIn();
+        // get admin session
+        Mage::getSingleton('core/session', array('name' => 'adminhtml'))->start();
 
-      // return to frontend section
-      Mage::getSingleton('core/session', array('name' => 'frontend'))->start();
+        $admin_logged_in = Mage::getSingleton('admin/session', array('name' => 'adminhtml'))->isLoggedIn();
 
-      if (!$admin_logged_in)
-      {
-         header('HTTP/1.0 403 Forbidden');
-         echo 'Access denied.';
-         die();
-      }
-   }
+        // return to frontend section
+        Mage::getSingleton('core/session', array('name' => 'frontend'))->start();
 
-   /**
+        if (!$admin_logged_in)
+        {
+            header('HTTP/1.0 403 Forbidden');
+            echo $this->_getConfig('settings', 'message');
+            die();
+        }
+    }
+
+    /**
      * Return the config value for the passed path and key
      */
     private function _getConfig($path, $key)
     {
-        $fullpath = 'restrictaccess/' . $path . '/' . $key;
+        $fullpath = 'leytech_restrictaccess/' . $path . '/' . $key;
         return Mage::getStoreConfig($fullpath, Mage::app()->getStore());
     }
 
@@ -46,6 +51,20 @@ class Leytech_RestrictAccess_Model_Observer
     private function _moduleActive()
     {
         return (bool)$this->_getConfig('settings', 'enable_ext');
+    }
+
+    /**
+     * Return whether the current IP address is allowed access
+     */
+    private function _isIpAllowed()
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $allowed = explode(',', $this->_getConfig('settings', 'allowed_ips'));
+
+        if (in_array($ip, $allowed)) {
+            return true;
+        }
+        return false;
     }
 
 }

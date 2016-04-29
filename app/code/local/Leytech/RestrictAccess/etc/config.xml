@@ -7,14 +7,14 @@
     </modules>
     <global>
         <models>
-            <restrictaccess>
+            <leytech_restrictaccess>
                 <class>Leytech_RestrictAccess_Model</class>
-            </restrictaccess>
+            </leytech_restrictaccess>
         </models>
         <helpers>
-            <restrictaccess>
+            <leytech_restrictaccess>
                 <class>Leytech_RestrictAccess_Helper</class>
-            </restrictaccess>
+            </leytech_restrictaccess>
         </helpers>
         <events>
             <controller_front_init_before>
@@ -29,10 +29,12 @@
         </events>
     </global>
     <default>
-        <restrictaccess>
+        <leytech_restrictaccess>
             <settings>
                 <enable_ext>0</enable_ext>
+                <allowed_ips></allowed_ips>
+                <message>Access denied.</message>
             </settings>
-        </restrictaccess>
+        </leytech_restrictaccess>
     </default>
 </config>
