@@ -25,11 +25,12 @@ class Leytech_RestrictAccess_Model_Observer
 
         $admin_logged_in = Mage::getSingleton('admin/session', array('name' => 'adminhtml'))->isLoggedIn();
 
-        // return to frontend section
+        // return to frontend session
         Mage::getSingleton('core/session', array('name' => 'frontend'))->start();
 
         if (!$admin_logged_in)
         {
+            $this->_logDeniedAccess();
             header('HTTP/1.0 403 Forbidden');
             echo $this->_getConfig('settings', 'message');
             die();
@@ -65,6 +66,20 @@ class Leytech_RestrictAccess_Model_Observer
             return true;
         }
         return false;
+    }
+
+    /**
+     * Log any denied access requests
+     */
+    private function _logDeniedAccess() {
+        if(!(bool)$this->_getConfig('settings', 'enable_log')) {
+            return;
+        }
+        Mage::log(
+            sprintf('Restrict Access: Access denied to %s from address %s', Mage::helper('core/url')->getCurrentUrl(), $_SERVER["REMOTE_ADDR"]),
+            null,
+            $this->_getConfig('settings', 'log_file')
+        );
     }
 
 }

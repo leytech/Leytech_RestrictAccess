@@ -34,6 +34,8 @@
                 <enable_ext>0</enable_ext>
                 <allowed_ips></allowed_ips>
                 <message>Access denied.</message>
+                <enable_log>0</enable_log>
+                <log_file>restrict-access.log</log_file>
             </settings>
         </leytech_restrictaccess>
     </default>
