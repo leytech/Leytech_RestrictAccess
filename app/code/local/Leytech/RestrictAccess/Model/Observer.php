@@ -60,8 +60,14 @@ class Leytech_RestrictAccess_Model_Observer
     private function _isIpAllowed()
     {
         $ip = $_SERVER['REMOTE_ADDR'];
-        $allowed = explode(',', $this->_getConfig('settings', 'allowed_ips'));
 
+        // Allow if IP is empty and configured to allow empty IPs
+        if ($this->_getConfig('settings', 'allow_empty_ip') && empty($ip)) {
+            return true;
+        }
+
+        // Allow if IP is in list of allowed IPs
+        $allowed = explode(',', $this->_getConfig('settings', 'allowed_ips'));
         if (in_array($ip, $allowed)) {
             return true;
         }

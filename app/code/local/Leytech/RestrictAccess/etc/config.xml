@@ -33,6 +33,7 @@
             <settings>
                 <enable_ext>0</enable_ext>
                 <allowed_ips></allowed_ips>
+                <allow_empty_ip>0</allow_empty_ip>
                 <message>Access denied.</message>
                 <enable_log>0</enable_log>
                 <log_file>restrict-access.log</log_file>

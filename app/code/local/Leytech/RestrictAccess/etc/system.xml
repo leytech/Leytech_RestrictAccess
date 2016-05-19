@@ -53,11 +53,21 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</allowed_ips>
+						<allow_empty_ip translate="label comment">
+							<label>Allow from empty IP address</label>
+							<comment>This will allow access if $_SERVER["REMOTE_ADDR"] is empty. Can be useful for allowing CLI scripts to run but has security implications.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allow_empty_ip>
 						<message translate="label comment">
 							<label>Message</label>
 							<comment>Will be shown when access is denied.</comment>
 							<frontend_type>text</frontend_type>
-							<sort_order>30</sort_order>
+							<sort_order>40</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -66,7 +76,7 @@
 							<label>Log denied requests?</label>
 							<frontend_type>select</frontend_type>
 							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>40</sort_order>
+							<sort_order>50</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
@@ -75,7 +85,7 @@
 							<label>Log file to use</label>
 							<comment>Leave blank to use system log.</comment>
 							<frontend_type>text</frontend_type>
-							<sort_order>50</sort_order>
+							<sort_order>60</sort_order>
 							<show_in_default>1</show_in_default>
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
