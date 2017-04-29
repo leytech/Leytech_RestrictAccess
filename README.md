@@ -10,7 +10,7 @@ Be very careful using it on a production site. You almost certainly don't want t
 
 - Restricts access to the store front.
 - Allow access from specific IP addresses (whitelist).
-- Allow access to users who are logged in to the admin area (experimental)*
+- Allow access from users who are logged in to the admin area (experimental)*
 - Uses no Model or Block rewrites!
 - Requires no additional web server configuration.
 - Shows a notice in the admin area when enabled so you don't leave it enabled by mistake.
