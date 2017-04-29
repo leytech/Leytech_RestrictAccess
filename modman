@@ -1,6 +1,2 @@
-app/code/local/Leytech/RestrictAccess/etc/adminhtml.xml app/code/local/Leytech/RestrictAccess/etc/adminhtml.xml
-app/code/local/Leytech/RestrictAccess/etc/config.xml app/code/local/Leytech/RestrictAccess/etc/config.xml
-app/code/local/Leytech/RestrictAccess/etc/system.xml app/code/local/Leytech/RestrictAccess/etc/system.xml
-app/code/local/Leytech/RestrictAccess/Helper/Data.php app/code/local/Leytech/RestrictAccess/Helper/Data.php
-app/code/local/Leytech/RestrictAccess/Model/Observer.php app/code/local/Leytech/RestrictAccess/Model/Observer.php
-app/etc/modules/Leytech_RestrictAccess.xml app/etc/modules/Leytech_RestrictAccess.xml
+src/app/code/local/Leytech/RestrictAccess               app/code/local/Leytech/RestrictAccess
+src/app/etc/modules/Leytech_RestrictAccess.xml          app/etc/modules/Leytech_RestrictAccess.xml

@@ -1,5 +1,5 @@
 {
-    "name": "leytech/magento-leytech-restrictaccess",
+    "name": "leytech/leytech_restrictaccess",
     "type": "magento-module",
     "description": "Module to restrict access to front end to only users who are logged into admin backend.",
     "require": {
