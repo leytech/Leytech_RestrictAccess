@@ -41,7 +41,7 @@
                     </comment>
                 </about>
                 <settings translate="label">
-                    <label>Module Configuration</label>
+                    <label>Settings</label>
                     <sort_order>20</sort_order>
                     <frontend_type>text</frontend_type>
                     <show_in_default>1</show_in_default>

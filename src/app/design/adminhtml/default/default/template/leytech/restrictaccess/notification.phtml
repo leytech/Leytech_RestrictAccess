@@ -1,0 +1,18 @@
+<?php
+/**
+ * @package    Leytech_RestrictAccess
+ * @author     Chris Nolan (chris@leytech.co.uk)
+ * @copyright  Copyright (c) 2017 Leytech
+ * @license    https://opensource.org/licenses/MIT  The MIT License  (MIT)
+ */
+?>
+<?php if ($this->displayRestrictAccessNotice()): ?>
+    <div class="notification-global">
+        <strong><?php echo $this->helper('adminhtml')->__('Access to the store front is restricted!') ?></strong>
+        <?php if ($this->canConfigure()): ?>
+            <?php echo $this->helper('adminhtml')->__('This is only recommended for staging sites or preview stores. Go to <a href="%s">Restrict Access Settings</a> if you need to allow full public access.', $this->getManageUrl()) ?>
+        <?php else : ?>
+            <?php echo $this->helper('adminhtml')->__('This is only recommended for staging sites or preview stores. If this is a live store then contact a system administrator.') ?>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

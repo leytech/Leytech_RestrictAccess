@@ -14,6 +14,11 @@
         </Leytech_RestrictAccess>
     </modules>
     <global>
+        <blocks>
+            <leytech_restrictaccess>
+                <class>Leytech_RestrictAccess_Block</class>
+            </leytech_restrictaccess>
+        </blocks>
         <models>
             <leytech_restrictaccess>
                 <class>Leytech_RestrictAccess_Model</class>
@@ -38,6 +43,15 @@
             </controller_action_predispatch>
         </events>
     </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <leytech_restrictaccess>
+                    <file>leytech/restrictaccess.xml</file>
+                </leytech_restrictaccess>
+            </updates>
+        </layout>
+    </adminhtml>
     <default>
         <leytech_restrictaccess>
             <settings>

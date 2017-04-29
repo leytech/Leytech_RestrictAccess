@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Leytech_RestrictAccess
+ * @author     Chris Nolan (chris@leytech.co.uk)
+ * @copyright  Copyright (c) 2017 Leytech
+ * @license    https://opensource.org/licenses/MIT  The MIT License  (MIT)
+ */
+-->
+<layout>
+    <default>
+        <reference name="notifications">
+            <block type="leytech_restrictaccess/adminhtml_notification" name="leytech_restrictaccess_notification" as="leytech_restrictaccess_notification" template="leytech/restrictaccess/notification.phtml" before="-"/>
+        </reference>
+    </default>
+</layout>
