@@ -3,7 +3,7 @@
     <modules>
         <Leytech_RestrictAccess>
             <active>true</active>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
         </Leytech_RestrictAccess>
     </modules>
 </config>
