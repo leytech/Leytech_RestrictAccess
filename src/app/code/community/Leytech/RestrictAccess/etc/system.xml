@@ -108,9 +108,9 @@
                         </log_file>
                     </fields>
                 </settings>
-                <about_experimental translate="label">
-                    <label>Experimental Feature</label>
-                    <sort_order>30</sort_order>
+                <admin_access translate="label">
+                    <label>Permit Admin Access</label>
+                    <sort_order>40</sort_order>
                     <frontend_type>text</frontend_type>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
@@ -124,15 +124,6 @@
                         <p></p>
                         ]]>
                     </comment>
-                </about_experimental>
-                <admin_access translate="label">
-                    <label>Permit Admin Access</label>
-                    <sort_order>40</sort_order>
-                    <frontend_type>text</frontend_type>
-                    <show_in_default>1</show_in_default>
-                    <show_in_website>1</show_in_website>
-                    <show_in_store>1</show_in_store>
-                    <expanded>1</expanded>
                     <fields>
                         <permitted translate="label comment">
                             <label>Permit admin access</label>
