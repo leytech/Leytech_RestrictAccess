@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @package    Leytech_RestrictAccess
+ * @author     Chris Nolan (chris@leytech.co.uk)
+ * @copyright  Copyright (c) 2017 Leytech
+ * @license    https://opensource.org/licenses/MIT  The MIT License  (MIT)
+ */
+-->
 <config>
     <acl>
         <resources>
@@ -10,7 +18,7 @@
                                 <children>
                                     <leytech_restrictaccess translate="title" module="leytech_restrictaccess">
                                         <title>Leytech Restrict Access</title>
-                                        <sort_order>1008650</sort_order>
+                                        <sort_order>12180</sort_order>
                                     </leytech_restrictaccess>
                                 </children>
                             </config>
