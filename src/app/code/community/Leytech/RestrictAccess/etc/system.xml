@@ -35,8 +35,9 @@
                     <comment>
                         <![CDATA[
                         <h3>Leytech Restrict Access Extension</h3>
-                        <p>This extension restricts access to the store frontend depending on the visitor's IP address. It is useful for staging sites, pre-launch, or other times where you don't wish the public to browse a site.</p>
-                        <p>Be very careful using it on a production site. You almost certainly don't want to block public traffic to your site. If your site is down for maintenance you should use more suitable techniques such as maintenance mode or a properly configured holding page.
+                        <p>This extension restricts access to the store frontend depending on the visitor's IP address, or experimentally, depending on whether they are logged in to the admin area and have appropriate permissions.</p>
+                        <p>It is useful for staging sites, pre-launch, or other times where you don't wish the public to browse a site.</p>
+                        <p>Be very careful using it on a production site. You almost certainly don't want to block public traffic to your site. If your site is down for maintenance you should use more suitable techniques such as maintenance mode or a properly configured holding page.</p>
                         ]]>
                     </comment>
                 </about>
@@ -107,6 +108,44 @@
                         </log_file>
                     </fields>
                 </settings>
+                <about_experimental translate="label">
+                    <label>Experimental Feature</label>
+                    <sort_order>30</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <comment>
+                        <![CDATA[
+                        <h3>Warning: This feature is experimental</h3>
+                        <p>This experimental feature allows you to permit access to the store front to any user who is logged in to the admin area and whose permissions include access to the "Store Front" resource. This can be useful for providing access to those without static IP addresses.</p>
+                        <p>You must have the <a href="https://github.com/astorm/Magento_CrossAreaSessions" target="_blank">Magento Cross Area Sessions</a> extension installed for this feature to work.</p>
+                        <p></p>
+                        ]]>
+                    </comment>
+                </about_experimental>
+                <admin_access translate="label">
+                    <label>Permit Admin Access</label>
+                    <sort_order>40</sort_order>
+                    <frontend_type>text</frontend_type>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <permitted translate="label comment">
+                            <label>Permit admin access</label>
+                            <comment>Requires Pulsestorm_Crossareasession extension. If this is set to Yes then access to the frontend will be granted to any logged-in admin user whose permissions include access to the "Store Front" resource.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </permitted>
+                    </fields>
+                </admin_access>
             </groups>
         </leytech_restrictaccess>
     </sections>

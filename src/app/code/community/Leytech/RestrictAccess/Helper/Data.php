@@ -15,6 +15,8 @@ class Leytech_RestrictAccess_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_ENABLE_LOG = 'leytech_restrictaccess/settings/enable_log';
     const XML_PATH_LOG_FILE = 'leytech_restrictaccess/settings/log_file';
 
+    const XML_PATH_ADMIN_ACCESS_PERMITTED = 'leytech_restrictaccess/admin_access/permitted';
+
     public function isEnabled() {
         return Mage::getStoreConfig(self::XML_PATH_IS_ENABLED);
     }
@@ -37,6 +39,10 @@ class Leytech_RestrictAccess_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getLogFile() {
         return Mage::getStoreConfig(self::XML_PATH_LOG_FILE);
+    }
+
+    public function getAdminAccessPermitted() {
+        return Mage::getStoreConfig(self::XML_PATH_ADMIN_ACCESS_PERMITTED);
     }
 
     /**

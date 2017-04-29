@@ -24,6 +24,10 @@
                             </config>
                         </children>
                     </system>
+                    <leytech_allow_front translate="title" module="leytech_restrictaccess">
+                        <title>Store Front (Leytech Restrict Access)</title>
+                        <sort_order>200</sort_order>
+                    </leytech_allow_front>
                 </children>
             </admin>
         </resources>

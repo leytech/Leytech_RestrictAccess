@@ -22,28 +22,21 @@ class Leytech_RestrictAccess_Model_Observer
             return $this;
         }
 
+        // Check admin session
+        if (Mage::helper('core')->isModuleEnabled('Pulsestorm_Crossareasession') && $helper->getAdminAccessPermitted()) {
+            // Load the cross area session model
+            $manager = Mage::getModel('pulsestorm_crossareasession/manager');
+            // Check whether the user has access to admin/leytech_allow_front
+            if($manager->checkAdminAclRule('admin/leytech_allow_front')) {
+                return $this;
+            }
+        }
+
         $helper->logDeniedAccess();
         header('HTTP/1.0 403 Forbidden');
         echo $helper->getMessage();
         die();
 
-        /*
-        // get admin session
-        Mage::getSingleton('core/session', array('name' => 'adminhtml'))->start();
-
-        $admin_logged_in = Mage::getSingleton('admin/session', array('name' => 'adminhtml'))->isLoggedIn();
-
-        // return to frontend session
-        Mage::getSingleton('core/session', array('name' => 'frontend'))->start();
-
-        if (!$admin_logged_in)
-        {
-            $helper->logDeniedAccess();
-            header('HTTP/1.0 403 Forbidden');
-            echo $helper->getMessage();
-            die();
-        }
-        */
     }
 
 }
