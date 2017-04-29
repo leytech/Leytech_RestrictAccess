@@ -25,7 +25,7 @@ class Leytech_RestrictAccess_Block_Adminhtml_Notification extends Mage_Adminhtml
      */
     public function getManageUrl()
     {
-        return (bool) $this->getUrl('adminhtml/system_config/edit/section/leytech_restrictaccess');
+        return $this->getUrl('adminhtml/system_config/edit/section/leytech_restrictaccess');
     }
 
     /**
