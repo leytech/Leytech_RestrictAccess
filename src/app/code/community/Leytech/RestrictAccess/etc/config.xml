@@ -24,8 +24,10 @@
                 <class>Leytech_RestrictAccess_Helper</class>
             </leytech_restrictaccess>
         </helpers>
+    </global>
+    <frontend>
         <events>
-            <controller_front_init_before>
+            <controller_action_predispatch>
                 <observers>
                     <leytech_restrictaccess_access_observer>
                         <type>singleton</type>
@@ -33,13 +35,13 @@
                         <method>checkAccess</method>
                     </leytech_restrictaccess_access_observer>
                 </observers>
-            </controller_front_init_before>
+            </controller_action_predispatch>
         </events>
-    </global>
+    </frontend>
     <default>
         <leytech_restrictaccess>
             <settings>
-                <enable_ext>0</enable_ext>
+                <enabled>0</enabled>
                 <allowed_ips></allowed_ips>
                 <allow_empty_ip>0</allow_empty_ip>
                 <message>Access denied.</message>
