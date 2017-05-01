@@ -1,8 +1,13 @@
 {
     "name": "leytech/leytech_restrictaccess",
     "type": "magento-module",
-    "description": "Module to restrict access to front end to only users who are logged into admin backend.",
+    "description": "Module to restrict access to front end with whitelisting for IP addresses.",
+    "homepage": "https://github.com/leytech/Leytech_RestrictAccess",
     "require": {
+        "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra":{
+        "magento-root-dir": "src/"
     }
 }

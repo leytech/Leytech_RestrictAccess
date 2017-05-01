@@ -1,2 +1,4 @@
-src/app/code/local/Leytech/RestrictAccess               app/code/local/Leytech/RestrictAccess
-src/app/etc/modules/Leytech_RestrictAccess.xml          app/etc/modules/Leytech_RestrictAccess.xml
+src/app/code/local/Leytech/RestrictAccess                                   app/code/local/Leytech/RestrictAccess
+src/app/design/adminhtml/default/default/layout/leytech/restrictaccess.xml  app/design/adminhtml/default/default/layout/leytech/restrictaccess.xml
+src/app/design/adminhtml/default/default/template/leytech/restrictaccess    app/design/adminhtml/default/default/template/leytech/restrictaccess
+src/app/etc/modules/Leytech_RestrictAccess.xml                              app/etc/modules/Leytech_RestrictAccess.xml
