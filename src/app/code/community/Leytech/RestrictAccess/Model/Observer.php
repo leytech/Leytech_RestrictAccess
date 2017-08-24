@@ -32,11 +32,18 @@ class Leytech_RestrictAccess_Model_Observer
             }
         }
 
+        // Log requests
         $helper->logDeniedAccess();
-        header('HTTP/1.0 403 Forbidden');
-        echo $helper->getMessage();
-        die();
 
+        // Show the maintenance page or give 403 response and show message
+        if ($helper->getUse503Error()) {
+            include_once Mage::getBaseDir('base') . DS . 'errors' . DS . '503.php';
+            exit;
+        } else {
+            header('HTTP/1.0 403 Forbidden');
+            echo $helper->getMessage();
+            exit;
+        }
     }
 
 }

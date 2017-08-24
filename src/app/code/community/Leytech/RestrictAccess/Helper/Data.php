@@ -11,6 +11,7 @@ class Leytech_RestrictAccess_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_IS_ENABLED = 'leytech_restrictaccess/settings/enabled';
     const XML_PATH_ALLOWED_IPS = 'leytech_restrictaccess/settings/allowed_ips';
     const XML_PATH_ALLOW_EMPTY_IP = 'leytech_restrictaccess/settings/allow_empty_ip';
+    const XML_PATH_USE_503_ERROR = 'leytech_restrictaccess/settings/use_503_error';
     const XML_PATH_MESSAGE = 'leytech_restrictaccess/settings/message';
     const XML_PATH_ENABLE_LOG = 'leytech_restrictaccess/settings/enable_log';
     const XML_PATH_LOG_FILE = 'leytech_restrictaccess/settings/log_file';
@@ -27,6 +28,10 @@ class Leytech_RestrictAccess_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getAllowEmptyIp() {
         return Mage::getStoreConfig(self::XML_PATH_ALLOW_EMPTY_IP);
+    }
+
+    public function getUse503Error() {
+        return Mage::getStoreConfig(self::XML_PATH_USE_503_ERROR);
     }
 
     public function getMessage() {
