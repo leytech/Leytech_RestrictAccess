@@ -65,7 +65,7 @@
                         </enabled>
                         <allowed_ips translate="label comment">
                             <label>Allowed IP addresses</label>
-                            <comment>List of IP addresses (one per line) that will not be restricted.</comment>
+                            <comment><model>leytech_restrictaccess/adminhtml_system_config_source_allowedips_comment</model></comment>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
